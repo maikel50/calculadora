@@ -81,6 +81,15 @@ public class calculadora extends JFrame {
 		panel.setLayout(new GridLayout(5, 4, 0, 0));
 		
 		JButton btnNewButton_2 = new JButton("C");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				etiqueta.setText("");
+				operacion = "nula";
+				cadenaNumeros ="";
+				activado = true;
+				punto = true;
+			}
+		});
 		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		panel.add(btnNewButton_2);
 		
@@ -94,7 +103,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		btnNewButton_6.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -110,7 +119,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		btnNewButton_10.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -125,7 +134,7 @@ public class calculadora extends JFrame {
 					cadenaNumeros = "";
 					operacion = "dividir";
 					activado = false;
-					punto = true;
+					
 				}
 			}
 		});
@@ -141,7 +150,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -157,7 +166,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 			
 		});
@@ -174,7 +183,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		btnNewButton_7.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -189,7 +198,7 @@ public class calculadora extends JFrame {
 					cadenaNumeros = "";
 					operacion = "multiplicar";
 					activado = false;
-					punto = true;
+					
 				}
 			}
 		});
@@ -205,7 +214,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -221,7 +230,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		btnNewButton_13.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -237,7 +246,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		btnNewButton_16.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -252,7 +261,7 @@ public class calculadora extends JFrame {
 					cadenaNumeros = "";
 					operacion = "resta";
 					activado = false;
-					punto = true;
+					
 				}
 			}
 		});
@@ -269,7 +278,7 @@ public class calculadora extends JFrame {
 				}
 				etiqueta.setText(cadenaNumeros);
 				activado = true;
-				punto = true;
+				
 			}
 		});
 		
@@ -299,8 +308,10 @@ public class calculadora extends JFrame {
 					}else {
 						cadenaNumeros +=".";
 					}
+					etiqueta.setText(cadenaNumeros);
+					punto = false;
 				}
-				punto = false;
+				
 			}
 		});
 		btnNewButton_18.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -358,6 +369,7 @@ public class calculadora extends JFrame {
 				}
 				
 				activado = true;
+				punto = false;
 			}
 		});
 		btnNewButton_19.setFont(new Font("Tahoma", Font.PLAIN, 18));
